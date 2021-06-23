@@ -19,11 +19,9 @@ public class ImageUtils {
      * @param ext       图片后缀
      * @return ImageName
      */
-    public static String base64CodeTobeImage(String base64Str, String path, String ext) {
+    public static void base64CodeTobeImage(String base64Str, String path, String ext) {
         //创建文件对象
         File file = new File(path);
-        //正则过滤base64字符串的前缀
-//        String b = base64Str.replaceFirst("data:(.+?);base64,", "");
         //创建存储文件夹
         boolean dirs = file.mkdirs();
         //创建base64解码对象
@@ -38,7 +36,6 @@ public class ImageUtils {
                 }
             }
             //存储路径+ImageName；创建流对象；
-//            String imgFile = path + System.currentTimeMillis() + ext, name = System.currentTimeMillis() + ext;
             String imgFile = path + ext;
             OutputStream out = new FileOutputStream(imgFile);
             //写入磁盘
@@ -46,10 +43,8 @@ public class ImageUtils {
             out.flush();//刷新缓冲区
             out.close();//关闭IO流
             //返回图片名称
-            return ext;
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
     }
 }
