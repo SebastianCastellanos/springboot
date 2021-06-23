@@ -8,9 +8,6 @@ import com.example.demo.util.ImageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author XiongZiQi
  */
@@ -33,10 +30,10 @@ public class DiaryServiceImpl implements DiaryService {
         String[] picBase64List = diaryAttach.getPicBase64List();
         String[] picNameList = diaryAttach.getPicNameList();
 
-        List<DiaryAttach> list = new ArrayList<>();
-
         for (int i = 0; i < picBase64List.length; i++) {
+            //使用自定义工具将图片存进服务器
             ImageUtils.base64CodeTobeImage(picBase64List[i],path,picNameList[i]);
+            //将图片数据(图片数据ID,存储路径,图片名称,绑定的日记数据ID)存进数据库
             diaryAttach.setAttachUrl(path);
             diaryAttach.setAttachName(picNameList[i]);
             diaryAttach.setDiaryId(diaryAttach.getDiaryId());
