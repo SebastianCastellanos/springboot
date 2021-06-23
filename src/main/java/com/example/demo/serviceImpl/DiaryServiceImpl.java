@@ -20,7 +20,7 @@ public class DiaryServiceImpl implements DiaryService {
     @Autowired
     private DiaryMapper diaryMapper;
 
-    //声明存储路径常量(加个注释看看)
+    //声明存储路径常量
     private static final String path = "D:\\IdeaWorkbench\\MyProject\\【1】我的小程序\\image\\";
 
     @Override
