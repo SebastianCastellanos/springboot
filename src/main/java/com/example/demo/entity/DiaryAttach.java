@@ -9,6 +9,7 @@ public class DiaryAttach {
     private String attachUrl;
     private String attachName;
     private String operateTime;
+
     private String[] picBase64List;
     private String[] picNameList;
 
