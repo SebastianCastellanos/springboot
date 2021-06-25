@@ -16,6 +16,7 @@
         <result column="diaryId" property="diaryId" jdbcType="VARCHAR"/>
         <result column="attachUrl" property="attachUrl" jdbcType="VARCHAR"/>
         <result column="attachName" property="attachName" jdbcType="VARCHAR"/>
+        <result column="operateTime" property="operateTime" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <!--<select id="selectUserList" parameterType="com.example.demo.entity.UserInfo" resultMap="BaseResultMap">-->
@@ -48,8 +49,8 @@
     </insert>
 
     <insert id="addDiaryAttach" parameterType="com.example.demo.entity.DiaryAttach">
-        insert into b_diary_attach(diaryId,attachUrl,attachName)
-        values (#{diaryId},#{attachUrl},#{attachName})
+        insert into b_diary_attach(diaryId,attachUrl,attachName,operateTime)
+        values (#{diaryId},#{attachUrl},#{attachName},#{operateTime})
     </insert>
     <!--<insert id="addDiaryAttach" parameterType="com.example.demo.entity.DiaryAttach">-->
         <!--insert into b_diary_attach(diaryId,attachUrl,attachName) values-->

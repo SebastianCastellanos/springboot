@@ -37,6 +37,7 @@ public class DiaryServiceImpl implements DiaryService {
             diaryAttach.setAttachUrl(path);
             diaryAttach.setAttachName(picNameList[i]);
             diaryAttach.setDiaryId(diaryAttach.getDiaryId());
+            diaryAttach.setOperateTime(diaryAttach.getOperateTime());
             diaryAttach.setPicBase64List(null);
             diaryAttach.setPicNameList(null);
             diaryMapper.addDiaryAttach(diaryAttach);

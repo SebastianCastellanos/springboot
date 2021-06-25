@@ -8,6 +8,7 @@ public class DiaryAttach {
     private String diaryId;
     private String attachUrl;
     private String attachName;
+    private String operateTime;
     private String[] picBase64List;
     private String[] picNameList;
 
@@ -41,6 +42,14 @@ public class DiaryAttach {
 
     public void setAttachName(String attachName) {
         this.attachName = attachName;
+    }
+
+    public String getOperateTime() {
+        return operateTime;
+    }
+
+    public void setOperateTime(String operateTime) {
+        this.operateTime = operateTime;
     }
 
     public String[] getPicBase64List() {
